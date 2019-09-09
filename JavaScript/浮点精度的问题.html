@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>解决0.1+0.2的问题</title>
+  </head>
+  <body>
+    <script>
+      let a = 0.1,
+        b = 0.2
+      let c = a + b
+      console.log(c) //0.30000000000000004
+      // parseInt第二个参数表示进制 parseInt(1.23456, 10)
+      function toFixed(num, s) {
+        var times = Math.pow(10, s)
+        var des = num * times + 0.5
+        des = parseInt(des, 10) / times
+        return des + ''
+      }
+      console.log(toFixed(1.22354515, 4))
+    </script>
+  </body>
+</html>
