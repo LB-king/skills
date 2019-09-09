@@ -7,6 +7,7 @@
     <title>解决0.1+0.2的问题</title>
   </head>
   <body>
+    <button id="btn">点击取随机数</button>
     <script>
       let a = 0.1,
         b = 0.2
@@ -20,6 +21,20 @@
         return des + ''
       }
       console.log(toFixed(1.22354515, 4))
+
+      // 取某个范围的随机数
+      document.querySelector('#btn').addEventListener('click', () => {
+        console.log(getRamdon(1, 5))
+      })
+      function getRamdon(min, max) {
+        return Math.round(Math.random() * (max - min) + min)
+      }
+
+      let arr = [1, 2, 3, 4]
+      let i = arr.length
+      while (i--) {
+        console.log(arr[i])
+      }
     </script>
   </body>
 </html>
