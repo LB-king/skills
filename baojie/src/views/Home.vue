@@ -2,11 +2,7 @@
   <div class="home">
     <el-row>
       <el-col :span="5">
-        <el-input
-          v-model="val"
-          type="number"
-          @keydown.native="down"
-        ></el-input>
+        <input v-model="val" type="number"/>
       </el-col>
     </el-row>
   </div>
@@ -15,7 +11,6 @@
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
   name: 'home',
   data() {
@@ -24,9 +19,6 @@ export default {
     }
   },
   methods: {
-    down (e) {
-      e.target.value = e.target.value.replace(/[^\d]/g,"")
-    }
   },
   components: {
     HelloWorld

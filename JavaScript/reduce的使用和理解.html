@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>reduce的使用</title>
+  </head>
+  <body>
+    <script>
+      // reducer函数接受4个参数
+      // 1.Accumulator(acc) - 累计器
+      // 2.Current Value(cur) - 当前值
+      // 3.Current Index(idx) - 当前索引
+      // 4.Source Array(src) - 源数组
+
+      let arr1 = [1, 2, 3, 4]
+      let sum = arr1.reduce((acc, cur) => {
+       return acc + cur
+      }, 6)
+      console.log(sum)
+    </script>
+  </body>
+</html>

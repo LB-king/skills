@@ -7,7 +7,7 @@
     <title>输入框输入数字的规则</title>
   </head>
   <body>
-    <input type="text" id="btn" />
+    <input type="text" id="btn"/>
     <script>
       let num = '4521515'.replace(/(?=(?!\b)(\d{3})+$)/g, ',')
       // console.log(num) //4,521,515
@@ -39,6 +39,17 @@
         }
         return str
       }
+
+
+      let obj = {
+        aa:'AAA',
+        bb:'BBB',
+        cc:'CCC',
+        dd:'DDD'
+      }
+      let {aa,cc} = obj
+      let data = {aa,cc}
+      console.log(data)
     </script>
   </body>
 </html>
