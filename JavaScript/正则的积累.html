@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>输入框输入数字的规则</title>
+  </head>
+  <body>
+    <input type="text" id="btn" />
+    <script>
+      let num = '4521515'.replace(/(?=(?!\b)(\d{3})+$)/g, ',')
+      // console.log(num) //4,521,515
+
+      document.querySelector('#btn').addEventListener('input', el => {
+        // el.target.value = el.target.value.match(/\d+\.?\d{0,9}/,'')
+        el.target.value = NumberCheck(el.target.value)
+      })
+      function NumberCheck(num) {
+        var str = num
+        var len1 = str.substr(0, 1)
+        var len2 = str.substr(1, 1)
+        //1.正则替换，保留数字和小数点
+        str = str.replace(/[^\d^\.]+/g, '')
+        //2.第一位是0，第二位就不能输入其他数字，但是.可以
+        if (len1 == '0' && len2 != '.') {
+          str = len1
+        }
+        //3.第一位不能是.
+        if (len1 == '.') {
+          str = ''
+        }
+        //4.限制只能输入一个小数点
+        if (str.indexOf('.') != -1) {
+          var str_ = str.substr(str.indexOf('.') + 1)
+          if (str_.indexOf('.') != -1) {
+            str = str.substr(0, str.indexOf('.') + str_.indexOf('.') + 1)
+          }
+        }
+        return str
+      }
+    </script>
+  </body>
+</html>

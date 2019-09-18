@@ -5,8 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>解决0.1+0.2的问题</title>
+    <style>
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+      input[type='number'] {
+        -moz-appearance: textfield;
+      }
+    </style>
   </head>
   <body>
+    <input type="number" />
     <button id="btn">点击取随机数</button>
     <script>
       let a = 0.1,
