@@ -1,0 +1,2 @@
+1.配置中文环境
+ Ctrl+Shift+P---->configure language
