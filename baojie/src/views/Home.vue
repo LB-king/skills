@@ -39,8 +39,8 @@
 </template>
 
 <script>
-let a = document.implementation.hasFeature('CompositionEvent', '3.0')
-console.log(a)
+// let a = document.implementation.hasFeature('CompositionEvent', '3.0')
+// console.log(a)
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
 export default {

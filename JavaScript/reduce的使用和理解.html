@@ -16,9 +16,29 @@
 
       let arr1 = [1, 2, 3, 4]
       let sum = arr1.reduce((acc, cur) => {
-       return acc + cur
+        return acc + cur
       }, 6)
       console.log(sum)
+
+      let data = [
+        { name: '资源1', des: '选项1-1', price: 1111 },
+        { name: '资源1', des: '选项1-2', price: 2222 },
+        { name: '资源2', des: '选项2-1', price: 3333 },
+        { name: '资源2', des: '选项2-2', price: 4444 },
+        { name: '资源2', des: '选项2-3', price: 5555 }
+      ]
+      function groupBy(objectArray, property) {
+        return objectArray.reduce(function(acc, obj) {
+          let key = obj[property]
+          if (!acc[key]) {
+            acc[key] = []
+          }
+          acc[key].push(obj.des)
+          return acc
+        }, {})
+      }
+      let res = groupBy(data, 'name')
+      console.log(res)
     </script>
   </body>
 </html>
