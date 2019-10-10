@@ -40,3 +40,13 @@ ValidationProvider(rules='secret', v-slot='{errors}')
 
 
 
+```javascript
+function formatterPrice (price) {
+  if (price) {
+    return price.toString().replace(/(?=(\B)(\d{3})+$)/g, ',')
+  } else {
+    return ''
+  }
+}
+```
+

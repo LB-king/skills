@@ -1,15 +1,30 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/vchart">V-Chart</router-link> |
-      <router-link to="/validate">Vee-Validate</router-link> |
+      <router-link
+        v-for='item in navs'
+        :to="item.path"
+        :key='item.path'
+      >{{item.name}} |</router-link>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
-
+<script>
+export default {
+  data() {
+    return {
+      navs: [
+        { path: '/', name: 'Home' },
+        { path: '/about', name: 'About' },
+        { path: '/vchart', name: 'V-Chart' },
+        { path: '/validate', name: 'Vee-Validate' },
+        { path: '/vslot', name: 'V-slot' }
+      ]
+    }
+  }
+}
+</script>
 <style lang="scss">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
