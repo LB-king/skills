@@ -50,3 +50,19 @@ function formatterPrice (price) {
 }
 ```
 
+#### 引入dayjs
+
+```shell
+cnpm i dayjs --save
+```
+
+```javascript
+import dayjs from 'dayjs'
+dayjs().format('YYYY-MM-DD HH:mm:ss') //2019-10-10 19:08:09
+dayjs().format('YYYY年MM月DD日 HH:mm') //2019年10月10日 19:08
+dayjs(1570705887906).format('YYYY年MM月DD日 HH:mm:ss') //2019年10月10日 19:11:27
+dayjs('2019-12-12 1:2:3').format('YYYY年MM月DD日 HH:mm:ss') //2019年12月12日 01:02:03
+//diff获取两个Dayjs对象的时间差，默认毫秒
+dayjs('2019-10-10').diff(dayjs('2019-10-1'), 'day') // 9
+```
+

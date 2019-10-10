@@ -8,12 +8,33 @@
       template(#body)
         div body新内容
       template(#foot='prop') {{prop.tesmsg}}
+    h2 dayjs
+    div {{timer1}}
+    div {{timer2}}
+    div {{timer3}}
+    div {{timer4}}
+    div {{timer5}}
+    div {{timer6}}
+    div {{timer7}}
 </template>
 
 <script>
 import foo from './foo'
+import dayjs from 'dayjs'
 export default {
   name: 'Vslot',
+  data() {
+    return {
+      timer1: dayjs().format('YYYY-MM-DD HH:mm:ss'),
+      timer2: dayjs().format('YYYY年MM月DD日 HH:mm:ss'),
+      timer3: dayjs(1570705887906).format('YYYY年MM月DD日 HH:mm:ss'),
+      timer4: dayjs('2019-12-12 1:2:3').format('YYYY年MM月DD日 HH:mm:ss'),
+      timer5: dayjs().year(),
+      timer6: dayjs().month() + 1,
+      timer7: dayjs('2019-10-10').diff(dayjs('2018-10-1'), 'day')
+    }
+  },
+  computed: {},
   components: {
     foo
   }
@@ -22,4 +43,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.vslot {
+  text-align: left;
+}
 </style>
