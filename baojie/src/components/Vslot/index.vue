@@ -16,11 +16,15 @@
     div {{timer5}}
     div {{timer6}}
     div {{timer7}}
+    div daysInMonth---{{timer8}}
+    div .week---{{timer9}}
 </template>
 
 <script>
 import foo from './foo'
 import dayjs from 'dayjs'
+import weekOfYear from 'dayjs/plugin/weekOfYear'
+dayjs.extend(weekOfYear)
 export default {
   name: 'Vslot',
   data() {
@@ -31,7 +35,9 @@ export default {
       timer4: dayjs('2019-12-12 1:2:3').format('YYYY年MM月DD日 HH:mm:ss'),
       timer5: dayjs().year(),
       timer6: dayjs().month() + 1,
-      timer7: dayjs('2019-10-10').diff(dayjs('2018-10-1'), 'day')
+      timer7: dayjs('2019-10-10').diff(dayjs('2018-10-1'), 'day'),
+      timer8: dayjs().daysInMonth(),
+      timer9: dayjs('2019/10/1').week()
     }
   },
   computed: {},
