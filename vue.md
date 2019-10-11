@@ -32,10 +32,10 @@ Vue.component('ValidationProvider', ValidationProvider)
 
 在.vue中使用
 
-```vue
+```jade
 ValidationProvider(rules='secret', v-slot='{errors}')
-    el-input(v-model='val')
-    span {{errors[0]}}
+  el-input(v-model='val')
+  span {{errors[0]}}
 ```
 
 
@@ -70,5 +70,44 @@ dayjs('2019-10-10').diff(dayjs('2019-10-1'), 'day') // 9
 dayjs().daysInMonth() //31
 //当前是本年度的第几周
 dayjs('2019/10/1').week() //40
+```
+
+#### 全局sass
+
+```javascript
+module.exports = {
+  // 配置全局样式的变量
+  css: {
+    loaderOptions: {
+      sass: {
+        data: `@import '~@/assets/style/common/mixin.scss';`
+      }
+    }
+  }
+}
+//组件中可以使用scss中定义的类名
+```
+
+```scss
+// 这是全局的scss定义
+$baseColor:#bfc;
+.globalColor {
+    #016b1c;
+}
+// globalColor这个类名就可以直接使用啦
+```
+
+```scss
+// mixin的用法
+@mixin test {
+  font-size: 20px;
+  color: red;
+}
+.fz {
+  @include test;
+}
+.main {
+	color:$baseColor;
+}
 ```
 

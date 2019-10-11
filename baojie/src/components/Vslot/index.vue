@@ -10,14 +10,14 @@
       template(#foot='prop') {{prop.tesmsg}}
     h2 dayjs
     div {{timer1}}
-    div {{timer2}}
+    div.fz {{timer2}}
     div {{timer3}}
     div {{timer4}}
-    div {{timer5}}
+    div.fz {{timer5}}
     div {{timer6}}
     div {{timer7}}
     div daysInMonth---{{timer8}}
-    div .week---{{timer9}}
+    div.red .week---{{timer9}}
 </template>
 
 <script>
@@ -49,7 +49,15 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+@mixin test {
+  font-size: 20px;
+  color: red;
+}
+.fz {
+  @include test;
+}
 .vslot {
   text-align: left;
+  color: $baseColor;
 }
 </style>
