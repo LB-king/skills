@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 import ElementUI from 'element-ui'
 import VeRing from 'v-charts/lib/ring.common'
+import VePie from 'v-charts/lib/pie.common'
 import { ValidationProvider, extend } from 'vee-validate'
 import 'element-ui/lib/theme-chalk/index.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
@@ -16,6 +17,7 @@ Vue.component('ValidationProvider', ValidationProvider)
 Vue.use(ElementUI)
 Vue.use(VueAwesomeSwiper)
 Vue.component(VeRing.name, VeRing) // VeRing.name的值就是 VeRing
+Vue.component(VePie.name, VePie) // VePie.name的值就是 VePie
 Vue.config.productionTip = false
 
 new Vue({
