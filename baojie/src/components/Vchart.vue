@@ -17,15 +17,16 @@
 <script>
 export default {
   computed: {
-    msg1() {
+    msg1 () {
       return this.msg.replace(/↵/g, '</br>')
     }
   },
-  data() {
+  data () {
     return {
       msg: '第一点：1231313↵ 第二点：123131↵ 第三点、23131313↵',
       pieSettings: {
-        level: [['1/1', '1/2', '1/3'], ['1/4', '1/5']]
+        level: [['1/1', '1/2', '1/3'], ['1/4', '1/5']],
+        radius: 60
       },
       pieData: {
         columns: ['日期', '访问用户'],

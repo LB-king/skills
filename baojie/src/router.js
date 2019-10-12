@@ -36,6 +36,11 @@ export default new Router({
       path: '/vslot',
       name: 'vSlot',
       component: () => import('@/components/Vslot')
+    },
+    {
+      path: '/swiper',
+      name: 'swiper',
+      component: () => import('@/components/Swiper')
     }
   ]
 })

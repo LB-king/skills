@@ -27,7 +27,7 @@ import weekOfYear from 'dayjs/plugin/weekOfYear'
 dayjs.extend(weekOfYear)
 export default {
   name: 'Vslot',
-  data() {
+  data () {
     return {
       timer1: dayjs().format('YYYY-MM-DD HH:mm:ss'),
       timer2: dayjs().format('YYYY年MM月DD日 HH:mm:ss'),
