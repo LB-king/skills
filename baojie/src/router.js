@@ -41,6 +41,11 @@ export default new Router({
       path: '/swiper',
       name: 'swiper',
       component: () => import('@/components/Swiper')
+    },
+    {
+      path: '/pie',
+      name: 'pie',
+      component: () => import('@/components/PieComponent')
     }
   ]
 })

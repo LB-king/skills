@@ -18,7 +18,8 @@ export default {
         { path: '/vchart', name: 'V-Chart' },
         { path: '/validate', name: 'Vee-Validate' },
         { path: '/vslot', name: 'V-slot' },
-        { path: '/swiper', name: 'V-swipe' }
+        { path: '/swiper', name: 'V-swipe' },
+        { path: '/pie', name: 'V-pie' }
       ]
     }
   }
