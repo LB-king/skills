@@ -111,3 +111,36 @@ $baseColor:#bfc;
 }
 ```
 
+#### swiper
+
+更多的配置信息请参考：	https://www.swiper.com.cn/api/
+
+```shell
+cnpm install vue-awesome-swiper -S
+```
+
+按需引入
+
+```java
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
+//components: {swiper, swiperSlide}
+.swiper-container
+    swiper(:options="swiperOption", ref="mySwiper")
+       swiperSlide.slider(v-for='(item,index) in arr') {{item}}
+    .swiper-button-prev.swiper-button-black(slot="button-prev")
+    .swiper-button-next.swiper-button-black(slot="button-next")
+        
+        
+ //配置项
+ swiperOption: {
+    slidesPerView: 8,
+    spaceBetween: 30,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    allowTouchMove: false, // 不允许滑动切换
+ }
+//更详细信息参考官网 **
+```
+
