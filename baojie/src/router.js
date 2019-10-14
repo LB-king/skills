@@ -46,6 +46,11 @@ export default new Router({
       path: '/pie',
       name: 'pie',
       component: () => import('@/components/PieComponent')
+    },
+    {
+      path: '/better-scroll',
+      name: 'better-scroll',
+      component: () => import('@/components/BetterScroll')
     }
   ]
 })

@@ -19,7 +19,8 @@ export default {
         { path: '/validate', name: 'Vee-Validate' },
         { path: '/vslot', name: 'V-slot' },
         { path: '/swiper', name: 'V-swipe' },
-        { path: '/pie', name: 'V-pie' }
+        { path: '/pie', name: 'V-pie' },
+        { path: '/better-scroll', name: 'Better-Scroll' }
       ]
     }
   }
