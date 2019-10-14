@@ -33,7 +33,8 @@ export default {
         spaceBetween: 30,
         navigation: {
           nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
+          prevEl: '.swiper-button-prev',
+          disabledClass: 'my-button-disabled'
         },
         allowTouchMove: false, // 不允许滑动切换
         on: {
@@ -83,6 +84,14 @@ export default {
     background: #ccc;
     padding-left: 25px;
     padding-right: 25px;
+    .my-button-disabled {
+      cursor: not-allowed;
+      opacity: .2;
+    }
+    .swiper-wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
     .slider {
       cursor: pointer;
     }
