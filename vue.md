@@ -144,3 +144,15 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
 //更详细信息参考官网 **
 ```
 
+#### lodash
+
+```shell
+npm i --save lodash
+```
+
+```javascript
+import _, { throttle } from 'lodash'
+_.random(2, 7) // 取2-7之间的随机数 第三个参数表示是否支持小数
+_random(2.4, 8.9) // 范围之间的随机数，包含小数
+```
+

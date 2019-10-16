@@ -8,3 +8,6 @@
  "prettier.singleQuote": true,
 5. '.eslintrc.js'
 'space-before-function-paren': 'off'
+6.安装eslint
+7.生成块级注释的快捷键 alt+shift+a
+8.侧边栏字体大小调整(ctrl+shift+ +)  OR  (ctrl+shift+ - )
