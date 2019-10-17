@@ -1,5 +1,7 @@
 #### 使用pug模板编写
 
+component(:is='currentComponent')
+
 ```shell
 npm install pug pug-loader pug-plain-loader -S
 ```
@@ -156,3 +158,72 @@ _.random(2, 7) // 取2-7之间的随机数 第三个参数表示是否支持小�
 _random(2.4, 8.9) // 范围之间的随机数，包含小数
 ```
 
+#### bettr-scroll
+
+```shell
+npm install better-scroll --save
+```
+
+```javascript
+.main(ref='main')
+      .content(ref='content',:style='contentWidth')
+        div(v-for='i in list',:key='i') {{i}}
+this.$nextTick(() => {
+	this.scroll = new BScroll('.main', {
+        scrollX: false,
+        scrollY: true,
+        bounce: {
+          top: true,
+          bottom: true,
+          left: true,
+          right: true
+        },
+        bounceTime: 700
+      })
+    })
+```
+
+
+
+#### ly-tab
+
+```shell
+npm install ly-tab --save
+```
+
+```javascript
+// main.js中配置：
+import Vue from 'vue'
+import LyTab from 'ly-tab'
+Vue.use(LyTab)
+```
+
+```javascript
+// 其他组件使用
+<ly-tab :items='items' v-model='selectedIndex' :options='options' @change='handleChange'></ly-tab>
+export default {
+    data () {
+        return {
+            items: [{label:'AAA'},{label:'BBB'}],
+            selectedIndex: 0,
+            options: {
+                activeColor: 'red'
+            }
+        }
+    }
+}
+```
+
+#### v-model修饰符
+
+- lazy:只有在input输入框发生blur时才触发
+- trim:将用户输入的前后的空格去掉
+- number:将用户输入的字符串转换成number
+
+#### 函数防抖(debounce)
+
+当一个动作连续触发，则执行最后一次
+
+#### 函数节流(throttle)
+
+限制一个函数在一定时间内只能执行一次

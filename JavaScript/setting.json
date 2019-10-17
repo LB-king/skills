@@ -1,0 +1,30 @@
+{
+  "javascript.implicitProjectConfig.experimentalDecorators": true,
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "editor.mouseWheelZoom": true,
+  "editor.fontSize": 14,
+  "editor.tabSize": 2,
+  "window.zoomLevel": 0.8,
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "vetur.format.defaultFormatter.html": "js-beautify-html",
+  "vetur.format.defaultFormatterOptions": {
+      "prettier": {
+          "semi": false,
+          "singleQuote": true
+      }
+  },
+  "[jsonc]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "explorer.confirmDelete": false
+}

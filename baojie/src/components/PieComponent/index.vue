@@ -8,12 +8,11 @@
 
 <script>
 import chartMixin from './mixin'
-import _, { throttle } from 'lodash'
+import _ from 'lodash'
 let colorList = [ '#1b57ce', '#7ad050', '#8c40e2', '#f56c6c', '#80748e', '#3f547d', '#5484e6', '#8abf70' ]
 const getRandomColor = (arr) => {
   return colorList[_.random(0, arr.length - 1)]
 }
-let echarts = require('echarts')
 export default {
   name: 'PieComponent',
   mixins: [ chartMixin ],

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <button type="button" name="button" id="myBtn">点击A</button>
+        <button type="button" name="button" id="myBtnB">点击B</button>
+        <div id="info">
+
+        </div>
+        <script type="text/javascript">
+            let count = 0;
+            let myBtn = document.getElementById('myBtn');
+            let myBtnB = document.getElementById('myBtnB');
+            let info = document.getElementById('info');
+            // 用setTimeout控制多长时间显示一次
+            // 一段时间内 只有最后一次点击的才起作用
+            let debounceA = (func, waitTime = 0) => {
+                let timer = null;
+                let debounced = (...args) => {
+                    let self = this;
+                    let addTimer = () => {
+                        timer = setTimeout(() => {
+                            invokeFunc();
+                            clearTimer();
+                        }, waitTime)
+                    }
+
+                    let invokeFunc = () => {
+                        func.apply(self, args);
+                    }
+
+                    let clearTimer = () => {
+                        clearTimeout(timer);
+                        timer = null;
+                    }
+
+                    if(timer === null) {
+                        addTimer();
+                        return;
+                    }
+
+                    if(timer !== null) {
+                        clearTimer();
+                        addTimer();
+                        return;
+                    }
+                }
+
+                return debounced;
+            }
+
+            // 一段时间内只有第一次点击起到作用
+            let debounceB = (func, waitTime) => {
+                let timer = null;
+
+                let debounced = (args) => {
+                    let self = this;
+                    let invokeFunc = () => {
+                        func.apply(self, args);
+                    }
+
+                    let clearTimer = () => {
+                        clearTimeout(timer);
+                        timer = null;
+                    }
+
+                    timer === null && invokeFunc();
+                    timer !== null && clearTimer();
+
+                    timer = setTimeout(() => {
+                        clearTimer();
+                    }, waitTime)
+                }
+
+                return debounced;
+            }
+
+            let log = () => {
+                count = count + 1;
+                info.innerHTML = `共点击了${count}次`;
+            }
+
+            let logR = () => {
+                count = count + 1;
+                info.innerHTML = `共缩放了${count}次`;
+            }
+            myBtn.onclick = debounceA(log, 500);
+            myBtnB.onclick = debounceB(log, 2000);
+            // 在触发屏幕大小缩放的时候
+            window.onresize = debounceA(logR, 500);
+        </script>
+    </body>
+</html>

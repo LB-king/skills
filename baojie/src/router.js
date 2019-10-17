@@ -51,6 +51,16 @@ export default new Router({
       path: '/better-scroll',
       name: 'better-scroll',
       component: () => import('@/components/BetterScroll')
+    },
+    {
+      path: '/down-up',
+      name: 'Down-Up',
+      component: () => import('@/components/pullDownAndUp')
+    },
+    {
+      path: '/robot/index',
+      name: 'robot',
+      component: () => import('@/components/robot')
     }
   ]
 })

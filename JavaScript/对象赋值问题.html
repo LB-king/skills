@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>对象赋值</title>
+  </head>
+  <body>
+    <button id="btn">点击</button>
+    <script>
+      var obj = {
+        o1:'o11',
+        o2:'o22'
+      }
+      console.log([...Object.values(obj)])  //["o11", "o22"]
+
+      console.log(Math.max(...[1,2,3,3,22,4,5]))
+
+      let arr1 = [1,2,3]
+      let arr2 = [4,5,6]
+      arr1.push(...arr2)
+      console.log(arr1)
+
+      function me(a = 99){
+        console.log(a)
+      }
+      me(88888)
+    </script>
+  </body>
+</html>

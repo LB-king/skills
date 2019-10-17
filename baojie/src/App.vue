@@ -20,7 +20,9 @@ export default {
         { path: '/vslot', name: 'V-slot' },
         { path: '/swiper', name: 'V-swipe' },
         { path: '/pie', name: 'V-pie' },
-        { path: '/better-scroll', name: 'Better-Scroll' }
+        { path: '/better-scroll', name: 'Better-Scroll' },
+        { path: '/down-up', name: 'Down-Up' },
+        { path: '/robot/index', name: 'robot' }
       ]
     }
   }
