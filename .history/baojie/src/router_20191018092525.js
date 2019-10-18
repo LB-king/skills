@@ -58,21 +58,14 @@ export default new Router({
       component: () => import('@/components/pullDownAndUp')
     },
     {
-      path: '/robot/index',
-      name: 'robot-index',
-      component: () => import('@/components/robot'),
-      children: [
-        {
-          path: '/robot/index/sum',
-          name: 'robot-index-sum',
-          component: () => import('@/components/robot/sum')
-        },
-        {
-          path: '/robot/index/analyze',
-          name: 'robot-index-analyze',
-          component: () => import('@/components/robot/analyze/index.vue')
-        }
-      ]
+      path: '/robot/sum',
+      name: 'robot-sum',
+      component: () => import('@/components/robot')
+    },
+    {
+      path: '/robot/analyze',
+      name: 'robot-analyze',
+      component: () => import('@/components/robot/analyze')
     }
   ]
 })
