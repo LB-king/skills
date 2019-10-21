@@ -214,6 +214,18 @@ export default {
 }
 ```
 
+#### font-awesome
+
+```shell
+cnpm i -S font-awesome
+```
+
+```java
+
+```
+
+
+
 #### v-model修饰符
 
 - lazy:只有在input输入框发生blur时才触发
