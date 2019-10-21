@@ -73,6 +73,16 @@ export default new Router({
           component: () => import('@/components/robot/analyze/index.vue')
         }
       ]
+    },
+    {
+      path: '/dragable',
+      name: 'dragable',
+      component: () => import('@/components/dragable/index.vue')
+    },
+    {
+      path: '/waterfall',
+      name: 'waterfall',
+      component: () => import('@/components/WaterFall/index.vue')
     }
   ]
 })

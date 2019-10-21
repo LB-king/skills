@@ -37,6 +37,7 @@ export default {
       let anchorEl = document.getElementById('md30')
       if (anchorEl) {
         let total = anchorEl.offsetTop
+        console.log(total)
         window.scrollTo({
           top: total,
           behavior: 'smooth'

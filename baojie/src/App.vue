@@ -22,7 +22,9 @@ export default {
         { path: '/pie', name: 'V-pie' },
         { path: '/better-scroll', name: 'Better-Scroll' },
         { path: '/down-up', name: 'Down-Up' },
-        { path: '/robot/index', name: 'robot' }
+        { path: '/robot/index', name: 'robot' },
+        { path: '/dragable', name: 'dragable' },
+        { path: '/waterfall', name: 'waterfall' }
       ]
     }
   }

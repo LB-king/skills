@@ -249,9 +249,24 @@ anchorClicked () {
     let el = document.getElementById('XXX')
     let scrollTopHeight = el && el.offsetTop
     window.scrollTo({
-    top: scrollTopHeight,
-    behavior: 'smooth' // 加上smooth就会有一种平滑的效果
-})
+        top: scrollTopHeight,
+        behavior: 'smooth' // 加上smooth就会有一种平滑的效果
+	})
 }
+```
+
+#### vuedraggable
+
+```shell
+cnpm i -S vuedraggable
+```
+
+```javascript
+import vueDragable from 'vuedraggable'
+​```components: {vueDragable}
+// 在vue中引用
+vueDragable.main-box(v-model='myArr', :move='move', @start='onStart')
+   transition-group
+     div.list(v-for='(item,index) in myArr', :key='index') {{item}}
 ```
 
