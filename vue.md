@@ -220,10 +220,6 @@ export default {
 cnpm i -S font-awesome
 ```
 
-```java
-
-```
-
 
 
 #### v-model修饰符
@@ -239,3 +235,23 @@ cnpm i -S font-awesome
 #### 函数节流(throttle)
 
 限制一个函数在一定时间内只能执行一次
+
+
+
+#### 锚点与router
+
+```vue
+<a href='' @click.prevent='anchorClicked'></a>
+```
+
+```javascript
+anchorClicked () {
+    let el = document.getElementById('XXX')
+    let scrollTopHeight = el && el.offsetTop
+    window.scrollTo({
+    top: scrollTopHeight,
+    behavior: 'smooth' // 加上smooth就会有一种平滑的效果
+})
+}
+```
+
