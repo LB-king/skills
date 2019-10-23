@@ -1,7 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-
+const files = require.context('./views', false, /\.vue$/)
+let modules = {}
+files.keys().forEach(key => {
+  modules[key.replace(/(\.\/|.vue)/g, '')] = files(key).default
+  console.log(files(key).default)
+})
 Vue.use(Router)
 
 export default new Router({
@@ -78,11 +83,6 @@ export default new Router({
       path: '/dragable',
       name: 'dragable',
       component: () => import('@/components/dragable/index.vue')
-    },
-    {
-      path: '/waterfall',
-      name: 'waterfall',
-      component: () => import('@/components/WaterFall/index.vue')
     }
   ]
 })

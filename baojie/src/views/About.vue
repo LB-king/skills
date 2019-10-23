@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  name: 'home',
+  name: 'About',
   data() {
     return {
       val: '',
@@ -51,7 +51,7 @@ export default {
     getSrc(row) {
       let src = row.src
       let data = Object.keys(this.groupByKey(this.data, 'name'))
-      let arr = this.tableData.filter(item => item.src === row.src)
+      // let arr = this.tableData.filter(item => item.src === row.src)
       if (src) {
         // console.log(this.groupByKey(this.data, 'name')[src])
       }
@@ -67,7 +67,7 @@ export default {
       let arr = []
       if (this.tableData.length) {
         for (let i = 0; i < this.data.length; i++) {
-          if (this.tableData.find(item => item.src === this.data[i].name && item.src1 === this.data[i].des)){
+          if (this.tableData.find(item => item.src === this.data[i].name && item.src1 === this.data[i].des)) {
             arr.push(this.data[i])
           }
         }

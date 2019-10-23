@@ -42,9 +42,9 @@
 // let a = document.implementation.hasFeature('CompositionEvent', '3.0')
 // console.log(a)
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+// import HelloWorld from '@/components/HelloWorld.vue'
 export default {
-  name: 'home',
+  name: 'Home',
   data() {
     return {
       val: '',
@@ -70,7 +70,7 @@ export default {
       if (this.tableData.length >= this.resources.length) return
       let src
       for (let i = 0; i < this.resources.length; i++) {
-        let item = this.resources[i]
+        // let item = this.resources[i]
         let usedSrc = this.getSelectedSrc()
         src = this.resources.find(i => !usedSrc.includes(i.id)).id
       }
@@ -86,7 +86,7 @@ export default {
     }
   },
   components: {
-    HelloWorld
+    // HelloWorld
   }
 }
 </script>

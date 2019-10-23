@@ -270,3 +270,21 @@ vueDragable.main-box(v-model='myArr', :move='move', @start='onStart')
      div.list(v-for='(item,index) in myArr', :key='index') {{item}}
 ```
 
+
+
+#### require.context
+
+三个参数：
+
+- directory--需要检索的目录
+- useSubdirectories--是否读取子目录
+- regExp--匹配文件的正则表达式
+
+```shell
+require(directory,useSubdirectory,regExp)
+```
+
+
+
+#### mocha+karma+chai
+

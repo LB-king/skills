@@ -23,8 +23,7 @@ export default {
         { path: '/better-scroll', name: 'Better-Scroll' },
         { path: '/down-up', name: 'Down-Up' },
         { path: '/robot/index', name: 'robot' },
-        { path: '/dragable', name: 'dragable' },
-        { path: '/waterfall', name: 'waterfall' }
+        { path: '/dragable', name: 'dragable' }
       ]
     }
   }

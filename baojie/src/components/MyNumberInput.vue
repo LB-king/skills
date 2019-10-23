@@ -30,7 +30,7 @@ export default {
         let val = this.$el.value
         let len = val.length
         // 解决首位直接输入 '0开头的数字'问题
-        if (len == 2 && val.charAt(0) == 0 && val.charAt(1) != '.') {
+        if (len === 2 && val.charAt(0) === 0 && val.charAt(1) !== '.') {
           this.$el.value = val.charAt(1)
           this.setParentModeVal(this.$el.value)
           return
@@ -60,7 +60,7 @@ export default {
         // 解决保留两位小数问题
         if (val) {
           let pointIndex = val.indexOf('.')
-          if (this.point == 0 && len == 2 && val.charAt(pointIndex) == '.') {
+          if (this.point === 0 && len === 2 && val.charAt(pointIndex) === '.') {
             console.log('只能输入整数')
             this.$el.value = val.substr(0, pointIndex)
             this.setParentModeVal(this.$el.value)
@@ -83,7 +83,6 @@ export default {
         }
 
         this.setParentModeVal(val)
-        return
       }
     }
   },
@@ -96,8 +95,9 @@ export default {
     // 判断键盘是否是删除动作
     var that = this
     window.document.onkeydown = function(event) {
+      // eslint-disable-next-line no-caller
       let e = event || window.event || arguments.callee.caller.arguments[0]
-      if (e.keyCode == 8 || e.keyCode == 46) {
+      if (e.keyCode === 8 || e.keyCode === 46) {
         that.keyDownDel = true
       } else {
         that.keyDownDel = false
