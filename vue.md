@@ -286,5 +286,5 @@ require(directory,useSubdirectory,regExp)
 
 
 
-#### mocha+karma+chai
+
 

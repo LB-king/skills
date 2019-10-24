@@ -6,8 +6,8 @@
         span |
         span.tab_title(:class='{"active":curlabel==="analyze"}',@click='tabChange("analyze")') 分析
     component(:is='curCom')
-    a(href='',@click.prevent='custormAnchor') click to md
-    div(v-for='i in 40', :key='i',style='height:30px;',:id='mkId(i)') 锚点位置---{{i}}
+      a(href='',@click.prevent='custormAnchor') click to md
+      div(v-for='i in 40', :key='i',style='height:30px;',:id='mkId(i)') 锚点位置---{{i}}
 </template>
 <script>
 import sumCom from './sum'
