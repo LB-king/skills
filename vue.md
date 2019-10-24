@@ -1,3 +1,79 @@
+#### 指令、自定义指令
+
+- v-text:显示文本内容
+
+- v-html:可以解析html代码片段
+
+- v-show:相当于style='display:none'
+
+- v-if:相当于代码注释  v-if v-else
+
+- v-for:遍历数组
+
+- v-on (@) 绑定事件 @keyup.13
+
+- v-bind (:) 绑定属性值 :value='XXX'
+
+- v-model:双向绑定
+
+- v-once:只绑定一次
+
+- v-cloak:双胡子闪动的问题
+
+  ```css
+  [v-cloak] {
+      display: none;
+  }
+  ```
+
+- 数据持久化(对文件进行修改||直接对数据库进行操作)
+
+#### 组件、自定义组件
+
+Vue.component('name',{})
+
+#### 生命周期-钩子函数
+
+- beforeCreate
+
+- created
+
+- beforeMount
+
+- mounted
+
+- beforeUpdate
+
+- Updated
+
+- beforeDestroy
+
+- destroyed---this.$destroy()销毁对象的方法
+
+  ```javascript
+  //1. 实例化一个vue对象
+  
+  //2. 需要对对象里面的属性和方法做一些配置，初始化
+  
+     //created：完成前2个步骤
+  
+  //3. 把vue挂载到id=app的元素上
+  
+     //mounted：以上3步已经完成
+  
+     //事件对象e.target.value(表示这个dom对象)
+  
+     //计算属性：totalprice
+  
+     //Array.prototype.splice(index,1)
+  ```
+
+#### 计算属性
+
+#### vue-router
+
+#### vuex
+
 #### 使用pug模板编写
 
 component(:is='currentComponent')
@@ -286,5 +362,12 @@ require(directory,useSubdirectory,regExp)
 
 
 
+#### background-management
 
+1. 配置pug-写出登录页面
+2. 直接上nodejs(直接放生产环境测试)
+3. 登录之后的路由跳转
+4. 拦截token登录问题
+5. mock出所有的交互数据
+6. 路由配置，localStorage存储登录信息，写出方法，存与取，
 
