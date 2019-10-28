@@ -118,8 +118,8 @@ export default {
   },
   computed: {
     caretClass() {
-      // return this.showMore ? 'el-icon-caret-bottom' : 'el-icon-caret-top'
-      return 'el-icon-caret-bottom'
+      return this.showMore ? 'el-icon-caret-bottom' : 'el-icon-caret-top'
+      // return 'el-icon-caret-bottom'
     }
   },
   mounted() {

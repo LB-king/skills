@@ -83,6 +83,11 @@ export default new Router({
       path: '/dragable',
       name: 'dragable',
       component: () => import('@/components/dragable/index.vue')
+    },
+    {
+      path: '/vuechart',
+      name: 'vuechart',
+      component: () => import('@/components/Vue-chart/index.vue')
     }
   ]
 })

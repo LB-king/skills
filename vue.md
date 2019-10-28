@@ -362,6 +362,14 @@ require(directory,useSubdirectory,regExp)
 
 
 
+#### chartjs
+
+```shell
+cnpm install vue-chartjs chart.js --save
+```
+
+
+
 #### background-management
 
 1. 配置pug-写出登录页面

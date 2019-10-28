@@ -5,10 +5,18 @@
       transition-group
         div.list(v-for='(item,index) in myArr', :key='index') {{item}}
     el-button(@click='addArr') Add
+    el-row
+      el-button(@click='setInfo') 添加localStorage
+      el-button(@click='getInfo') 获取localStorage
 </template>
 
 <script>
 import vueDragable from 'vuedraggable'
+import lowdb from 'lowdb'
+import LocalStorage from 'lowdb/adapters/LocalStorage'
+
+const adapter = new LocalStorage('test.db')
+const db = lowdb(adapter)
 export default {
   name: 'dragable',
   data() {
@@ -33,18 +41,30 @@ export default {
   },
   created() {},
   methods: {
+    setInfo() {
+      db.defaults({ posts: [], user: {}, count: 0 }).write()
+      db.get('posts')
+        .push({ id: 2, title: 'Kobe222' })
+        .write()
+    },
+    getInfo() {
+      let res = db.get('posts')
+        .find({ id: 2 })
+        .value()
+      console.log(res)
+    },
     // 移动的事件(有2个参数:最近的元素，拖拽事件)-注意监听的时候是用:move
-    move (relatedElement, dragEvent) {
+    move(relatedElement, dragEvent) {
       console.log(relatedElement.relatedContext.element)
     },
     // start,add,remove,update,end,choose,unchoose,sort,filter,clone
-    onStart (e) {
+    onStart(e) {
       // console.log(e)
     },
-    onAdd (el) {
+    onAdd(el) {
       console.log(el)
     },
-    addArr () {
+    addArr() {
       this.myArr.push('NEW-ITEM')
     }
   }

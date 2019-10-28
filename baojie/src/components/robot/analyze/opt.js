@@ -34,7 +34,7 @@ export default {
           {
             name: this.statsDimension === 'times' ? '运行次数' : '创值',
             type: 'bar',
-            barWidth: '60%',
+            barWidth: '70%',
             data: yData
           }
         ]
