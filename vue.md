@@ -72,6 +72,64 @@ Vue.component('name',{})
 
 #### vue-router
 
+响应路由参数的变化：
+
+当从user/foo到user/bar的时候，原来的组件会被复用，因为两个路由都渲染同一个组件，比起销毁和创建，复用则显得更加高效。
+
+**不过，这也意味着组件的生命周期钩子不会再被调用**
+
+1-复用组件时，想对路由参数的变化做出响应的话，可以**watch**(监测变化)$route 对象；
+
+```javascript
+const user = {
+    temlate: '...',
+    watch: {
+        '$route'(to, from) {
+            // 对路由变化做出响应
+        }
+    }
+}
+```
+
+2-也可以使用**beforeRouteUpdate**导航守卫
+
+```javascript
+const user = {
+    template:'...',
+    beforeRouteUpdate (to, from, next) {
+        //需要做出的操作
+        //别忘了 next()--否则会一直在加载中的状态
+    }
+}
+```
+
+
+
+```javascript
+//声明式
+<router-link :to='...'>
+//编程式的导航
+// 1.字符串
+this.$router.push('home')
+// 2.对象
+this.$router.push({path:'home'})
+// 3.命名的路由
+this.$router.push({name:'home',params:{id:111}})
+// 4.带查询参数，变成/register?plan=private
+this.$router.push({path:'register',query:{plan:'rivate'}})
+```
+
+**注意：**如果提供了path，params会被忽略，可以用如下的写法代替：
+
+```javascript
+let id = 123
+this.$router.push({name:'user',params:{id}})-->user/123
+this.router.push({path:`/user/${id}`}) -->user/123
+```
+
+- beforeRouterEnter-->第一次进入或从其他组件对应路由进入时触发
+- beforeRouterUpdate-->在同一组件对应的多个路由间切换时触发
+
 #### vuex
 
 #### 使用pug模板编写
