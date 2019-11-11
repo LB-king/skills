@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>箭头函数</title>
+</head>
+
+<body>
+	<script>
+		let fn = (...args) => {
+			console.log(...args)
+			console.log(this) //指向所在上下文环境
+			//console.log(arguments) //Uncaught ReferenceError: arguments is not defined
+		}
+		fn(2, 3)
+		function fn1() {
+			console.log(arguments)
+		}
+		fn1(1, 2)
+	</script>
+</body>
+
+</html>

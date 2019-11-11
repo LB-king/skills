@@ -99,7 +99,7 @@ git merge fenzhi
 git push origin dev #将fenzhi合并到dev
 ```
 
-#### 乱码问题
+#### gitk乱码问题
 
 ```shell
 git config --global gui.encoding utf-8

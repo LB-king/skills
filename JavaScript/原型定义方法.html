@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>原型上定义方法</title>
+</head>
+
+<body>
+  <script>
+    ~function () {
+      // 容错处理
+      function check(n) {
+        n = Number
+        return isNaN(n) ? 0 : n
+      }
+      function add(n) {
+        return this + check(n)
+      }
+      function minus(n) {
+        return this - check(n)
+      }
+      ['add', 'minus'].forEach(item => {
+        Number.prototype[item] = eval(item)
+      })
+    }()
+
+    console.log((3).add(4).minus(5))
+  </script>
+</body>
+
+</html>

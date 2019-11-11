@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="../src/vue.js"></script>
+	<script src="../src/vue-router.js"></script>
+</head>
+
+<body>
+	<div id="app">
+		<router-link to='/'>首页</router-link>
+		<router-link to='/about'>关于页面</router-link>
+		<router-link to='/user/张飞'>张飞</router-link>
+		<router-link to='/user/关羽'>关羽</router-link>
+		<button @click='jump'>点击跳转</button>
+		<div>
+			<router-view></router-view>
+		</div>
+	</div>
+	<script>
+		const routes = [
+			{
+				path: '/',
+				component: {
+					template: `<div>首页</div>`
+				}
+			},
+			{
+				path: '/about',
+				component: {
+					template: `<div>关于页面</div>`
+				}
+			},
+			{
+				path: '/user/:name',
+				name: 'user',
+				component: {
+					template: `
+                    <div>
+                        <div>我叫:{{$route.params.name}}</div>
+                        <div>年龄:{{$route.query.age}}</div>
+                        <router-link to='more' append>更多</router-link>
+                        <router-link :to='"/user/"+$route.params.name+"/more"'>更多</router-link>
+                        <router-view></router-view>
+                    </div>
+                    `
+				},
+				children: [
+					{
+						path: 'more',
+						component: {
+							template: `
+                            <div>
+                                {{$route.params.name}}的详细信息    
+                            </div>
+                            `
+						}
+					}
+				]
+			}
+		]
+		let router = new VueRouter({
+			routes
+		})
+		let vm = new Vue({
+			el: '#app',
+			router,
+			methods: {
+				jump() {
+					console.log(this.$route)
+					if (this.$route.name === 'user' && this.$route.params.name === '关羽') return
+					this.$router.push({
+						name: 'user',
+						params: {
+							name: '关羽'
+						}
+					})
+				}
+			}
+		})
+	</script>
+</body>
+
+</html>

@@ -1,52 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>array</title>
-  </head>
-  <body>
-    <script>
-      let arr = [
-        {
-          id: 1,
-          age: 11,
-          name: 'kobe1'
-        },
-        {
-          id:2,
-          age: 12,
-          name: 'kobe2'
-        },
-        {
-          id:3,
-          age: 13,
-          name: 'kobe3'
-        },
-        {
-          id:4,
-          age: 12,
-          name: 'kobe4'
-        }
-      ]
 
-      function getArrByAge(arr){
-        let res = []
-        let a = []
-        arr.forEach((item) => {
-          if(a.indexOf(item.age) === -1){
-            a.push(item.age)
-            res.push({
-              age:item.age,
-              name:item.name
-            })
-          }
-        })
-        return res
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>array</title>
+</head>
+
+<body>
+  <script>
+    let arr = [
+      {
+        id: 1,
+        age: 11,
+        name: 'kobe1'
+      },
+      {
+        id: 2,
+        age: 12,
+        name: 'kobe2'
+      },
+      {
+        id: 3,
+        age: 13,
+        name: 'kobe3'
+      },
+      {
+        id: 4,
+        age: 12,
+        name: 'kobe4'
       }
+    ]
 
-      console.log(getArrByAge(arr))
-    </script>
-  </body>
+    function getArrByAge(arr) {
+      let res = []
+      let a = []
+      arr.forEach((item) => {
+        if (a.indexOf(item.age) === -1) {
+          a.push(item.age)
+          res.push({
+            age: item.age,
+            name: item.name
+          })
+        }
+      })
+      return res
+    }
+
+    console.log(getArrByAge(arr))
+  </script>
+</body>
+
 </html>
