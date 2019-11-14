@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>数组扁平化</title>
+</head>
+
+<body>
+  <script>
+    let arr = [1, 2, [33, 44, [555, 6666]]]
+    console.log([].concat(...arr))
+    /****
+      1.使用es6的flat
+        let res = arr.flat(Infinity)
+      2.使用toString()
+        let res = arr.toString().split(',').map(item => Number(item))
+      3.使用JSON.stringify()
+        let res = JSON.stringify(arr).replace(/\[|\]/g, '').split(',').map(item => Number(item))
+      4.利用数组的some方法结合展开运算符实现  
+        while(arr.some(item=>Array.isArray(item))){
+          arr = [].concat(...arr)
+        }
+      5.递归处理
+
+     *****/
+
+    !function () {
+      function myFlat() {
+        let _this = this
+        let res = []
+        let fn = (arr) => {
+          for (let i = 0; i < arr.length; i++) {
+            if (Array.isArray(arr[i])) {
+              fn(arr[i])
+              continue
+            }
+            res.push(arr[i])
+          }
+        }
+        fn(_this)
+        return res
+      }
+      Array.prototype.myFlat = myFlat
+    }()
+    console.log(arr.myFlat())
+
+    // continue
+    for (let i = 0; i < 6; i++) {
+      if (i === 3) {
+        console.log(i)
+        continue
+      }
+      console.log('i的值是：' + i)
+    }
+
+  </script>
+</body>
+
+</html>

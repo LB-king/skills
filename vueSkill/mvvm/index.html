@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>自定义实现mvvm</title>
+</head>
+
+<body>
+  <div id="app">
+    <input type="text" v-model="scholl.name">
+    <div>{{school.name}}</div>
+    <p>hello</p>
+  </div>
+</body>
+<script src="mvvm.js"></script>
+<script>
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      school: '慕尼黑大学',
+      age: 100
+    },
+    methods: {
+
+    },
+    computed: {
+
+    }
+  })
+</script>
+
+</html>

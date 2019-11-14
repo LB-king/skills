@@ -154,7 +154,7 @@ function toFixed(num, s){
 ### 6.重写一个indexOf方法
 
 ```javascript
-//使用正则
+// 使用正则
 function myIndexOf (str) {
     let reg = new RegExp(str),
         res = reg.exec(this)
@@ -163,7 +163,7 @@ function myIndexOf (str) {
 !function () {
   String.prototype.myIndexOf = myIndexOf  
 }()
-//另一种思路：循环string，截取目标字符串片段长度的匹配项
+// 另一种思路：循环string，截取目标字符串片段长度的匹配项
 ```
 
 ### 7.图片的懒加载
@@ -188,7 +188,42 @@ let arr=[12,3[3,4,9,[55,66]]]
 //1.arr=arr.flat(Infinity)
 //2.arr=arr.toString().split(',')
 //3.arr=JSON.stringify(arr).replace(/(\[|\])/g,'')
+//4.some结合展开运算符...
+while(arr.some(item=>Array.isArray(item))){
+  arr = [].concat(...arr)
+}
+//5.递归算法搞定
+!function () {
+      function myFlat() {
+        let _this = this
+        let res = []
+        let fn = (arr) => {
+          for (let i = 0; i < arr.length; i++) {
+            if (Array.isArray(arr[i])) {
+              fn(arr[i])
+              continue
+            }
+            res.push(arr[i])
+          }
+        }
+        fn(_this)
+        return res
+      }
+      Array.prototype.myFlat = myFlat
+    }()
 ```
 
+### 10.push方法的思考
 
+```javascript
+let obj = {
+	2: 3,
+    3: 4,
+    length: 2,
+    push: Array.prototype.push
+}
+obj.push(1)
+obj.push(2)
+console.log(obj)
+```
 
