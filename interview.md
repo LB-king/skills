@@ -224,6 +224,120 @@ let obj = {
 }
 obj.push(1)
 obj.push(2)
-console.log(obj)
+console.log(obj) // 最终结果是多少？
 ```
 
+### 11.排序
+
+1. 冒泡bubble
+
+   思想就是：当前项和后一项进行比较，如果大于后一项则交换位置
+
+   ```javascript
+   // 外层循环-轮数
+   for(let i= 0; i < arr.length - 1; i++){
+       // 内层循环-次数
+       for(let j = 0; j < arr.length -1 -i; j++){
+          if(arr[j] > arr[j + 1]){
+              [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
+          } 
+       }
+   }
+   ```
+
+   引申：交换两个变量的方法
+
+   ```javascript
+   let a = 'AAA'
+   let b = 'BBB';
+   // 1.es6结构赋值
+   [a,b]=[b,a]
+   // 2.借助数组
+   a = [a,b]
+   b = a[a]
+   a = a[b]
+   // 3.借助对象
+   a = {a, b}
+   b = a.a
+   a = a.b
+   // 4.简洁
+   a = [b, b = a][0]
+   ```
+
+2. 插入排序
+
+   思想：先在数组取一个值，然后依次从剩下的值里面取值，和手里(取过)的值比较
+
+   ```javascript
+   function insert (arr) {
+       let hand = []
+       // 1.抓到手中的牌
+       hand.push(arr[0])
+       // 2.从第二项依次抓牌
+       for (let i = 1; i < arr.length; i++){
+           let curItem = arr[i]
+           // 3.和手里的牌依次比较
+           for (let j = 0; j < hand.length; j++){
+               let handItem = hand[j]
+               if (curItem > handItem){
+                   hand.splice(j + 1, 0, curItem)
+                   break
+               }
+               if (j === 0) {
+                   hand.unshift(curItem)
+               }
+           }
+       }
+       return hand
+   }
+   ```
+
+   
+
+3. 快速排序
+
+   思想：取数组中间的一个数，剩下的依次比较，比他大放右边，反之放左边，再递归左右两个数组
+
+   ```javascript
+   function quick(arr) {
+       if (arr.length <= 1) return arr
+       let middleIndex = Math.floor(arr.length / 2)
+       // 取出中间值，并在arr中删除该项
+       let middleVal = arr.splice(middleIndex, 1)[0]
+       let [left,right] = [[], []]
+       for (let i = 0; i < arr.length; i++) {
+           let item = arr[i]
+           item > middleVal ? right.push(item) : left.push(item)
+       }
+       return quick(left).concat(middleVal,quick(right))
+   }
+   ```
+
+
+
+### 12.项目中常用的ES6语法
+
+- includes
+- startsWith
+- endsWith
+- 模板字符串``
+- 解构赋值
+- 扩展运算符...拷贝数组
+- Array.from
+- find && findIndex
+- async await(async函数中return的结果将作为回调的参数)
+
+
+
+### 13.数组和对象的深拷贝
+
+- 数组
+  - for循环
+  - ES6扩展运算符 b=[...arr] || [...b] = a
+  - arr.slice(0)-->es5的语法
+  - arr.concat()
+- 对象
+  - for in 循环
+  - ES6 b={...obj}
+  - Object.assign({},obj)
+  - lodash.js中的`cloneDeep`方法

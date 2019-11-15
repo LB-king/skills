@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>插入排序</title>
+</head>
+
+<body>
+  <script>
+    // 用抓牌的思想去考虑
+    let arr = [40, 35, 12, 2, 33, 5, 44]
+    /* 
+     * insert 插入实现排序
+     * @params 参数arr[ARRAY] 需要排序的数组
+     * @return 返回的数组 [ARRAY] 排序后的新数组
+     */
+
+    function insert(arr) {
+      // 存储抓到手里的牌
+      let hand = []
+      hand.push(arr[0])
+      // 从第二项开始依次抓牌
+      for (let i = 1; i < arr.length; i++) {
+        let item = arr[i]
+        // 与手里的牌比较
+        for (let j = hand.length - 1; j >= 0; j--) {
+          let handItem = hand[j]
+          if (item > handItem) {
+            // 如果抓的牌比手里的某一张牌大，则直接插入到其后面
+            hand.splice(j + 1, 0, item)
+            break
+          }
+          if (j === 0) {
+            hand.unshift(item)
+          }
+        }
+      }
+      return hand
+    }
+    console.log(insert(arr))
+  </script>
+</body>
+
+</html>

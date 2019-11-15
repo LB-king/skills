@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>冒泡排序</title>
+</head>
+
+<body>
+  <script>
+    /* 
+    * 1.冒泡排序
+    * 思想：将数组中的当前项和后一项比较，如果当前项比后一项大，则两项交换位置(大的靠后)即可
+    *
+    */
+    let arr = [40, 35, 12, 2, 33, 5, 44]
+    // arr.sort((a, b) => a - b) // [2, 5, 12, 33, 35, 40, 44]
+    /* 
+     * bubble 冒泡函数实现排序
+     * @params 参数arr[ARRAY] 需要排序的数组
+     * @return 返回的数组 [ARRAY] 排序后的新数组
+     */
+
+    function bubble(arr) {
+      //比较的轮次，外层循环
+      for (let i = 0; i < arr.length - 1; i++) {
+        //内存循环：控制每轮比较的次数
+        for (let j = 0; j < arr.length - 1 - i; j++) {
+          if (arr[j] > arr[j + 1]) {
+            // let t = arr[j + 1]
+            // arr[j + 1] = arr[j]
+            // arr[j] = t
+            [arr[j + 1], arr[j]] = [arr[j], arr[j + 1]]
+          }
+        }
+      }
+      return arr
+    }
+    console.log(bubble(arr))
+
+    // 交换2个变量的值得方法
+    let a = 'AAA'
+    let b = 'BBB'
+    // 1.es6解构赋值
+    // ;[a, b] = [b, a]
+
+    // 2.对象
+    // a = {a:b,b:a}
+    // b = a.b
+    // a = a.a
+
+    // 3.数组
+    // a = [a, b]
+    // b = a[0]
+    // a = a[1]
+
+    // 4.大师写法
+    a = [b, b = a][0]
+    console.log(a)
+    console.log(b)
+  </script>
+</body>
+
+</html>

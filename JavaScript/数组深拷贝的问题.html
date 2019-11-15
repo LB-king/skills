@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>数组拷贝</title>
+</head>
+
+<body>
+  <script>
+    let a = [11, 22, 33]
+    // 浅拷贝
+    /*
+     *  let b = a
+        a[2] = 888
+        console.log(a) // [11, 22, 888]
+        console.log(b) // [11, 22, 888]
+
+        // 深拷贝
+        // 1.es6的扩展运算符
+            //  let b = [...a]
+            let [...b] = a
+            a[2] = 888
+            console.log(a) // [11, 22, 888]
+            console.log(b) // [11, 22, 33]
+
+        // 2.array.slice(0)
+            let b = a.slice(0)
+            a[2] = 888
+            console.log(a) // [11, 22, 888]
+            console.log(b) // [11, 22, 33]
+        // 3.array.concat()
+     *
+     */
+    let b = a.concat()
+    a[2] = 888
+    console.log(a) // [11, 22, 888]
+    console.log(b) // [11, 22, 33]
+
+    /* 
+     *对象的深拷贝
+     *1.ES6扩展运算符
+     *let obj1 = {...obj}
+     *2.for in循环
+     *3.Object.assign({},obj)
+     */
+    let obj = { name: 'kobe' }
+    // let o1 = obj
+
+    // let o1 = {...obj}
+
+    // let o1 = {}
+    // for (let i in obj) {
+    //   o1[i] = obj[i]
+    // }
+
+    let o1 = Object.assign({}, obj)
+    o1.name = 'Iverson'
+    console.log(obj)
+    console.log(o1)
+  </script>
+</body>
+
+</html>
