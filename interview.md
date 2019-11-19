@@ -341,3 +341,24 @@ console.log(obj) // 最终结果是多少？
   - ES6 b={...obj}
   - Object.assign({},obj)
   - lodash.js中的`cloneDeep`方法
+
+### 14.虚拟DOM提升性能
+
+本质是用JavaScript对象来构建DOM树
+
+当数据变化的时候，只需要刷新变化的位置就好了，页面不会重新渲染，从而降低了性能损耗
+
+### 15.THIS
+
+- `this`所在的函数在哪个对象中，`this`就代表这个对象
+
+- 谁调用this就是谁
+
+  ```javascript
+  function test () {
+      console.log(this)
+  }
+  test() //this->window 因为实际上是window调用this
+  ```
+
+- 构造函数中的this，始终是new的当前对象
