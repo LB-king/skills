@@ -105,3 +105,6 @@ git push origin dev #将fenzhi合并到dev
 git config --global gui.encoding utf-8
 ```
 
+git branch -b test
+
+git branch -vv 
