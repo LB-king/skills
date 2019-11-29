@@ -48,9 +48,54 @@ UPS:备用电源
 
 3.1 vmware workstation
 
+ VMware-workstation-full-15.5.1-15018445：
 
+​		CG392-4PX5J-H816Z-HYZNG-PQRG2  
+
+安装完成之后检查是否有2个网卡配置 `控制面板\网络和 Internet\网络连接`
+
+如果没有会影响Windows与虚拟机操作系统的网络共享与文件传输。
 
 3.2 virtualBox
+
+检查网卡-- VirtualBox Host-Only Network
+
+#### 4.Linux版本的选择
+
+cnetos:6.5
+
+#### 5.新建虚拟机
+
+##### 5.1、使用vmware workstations
+
+1. 注意安装的目录
+
+2. 处理器数量和核数量的选择 2  2 
+
+3. 分配内存
+
+4. 网络类型 默认NAT即可，配置好后即可和虚拟机进行互相通信
+
+   桥接：配置好之后，其他同学也可以访问虚拟机操作系统
+
+5. 磁盘类型 next 选择容量大小--20G即可
+
+##### 5.2 virtualBox安装
+
+···省略
+
+#### 6、使用vmware安装
+
+1. 指定系统
+2. 一路next     ctrl+alt 锁定鼠标
+3. 如果出现vcpu的错误，则说明电脑没有开启CPU的虚拟化，如果需要开启，则需要重启计算机，进入到BIOS界面开启虚拟化。保存设置重启电脑。 Inter Virtual Technology 设置为 Enabled
+4. 完整性检测可以跳过
+5. 键盘可以默认美式键盘
+6. 空白盘的格式化操作
+7. 配置网络：
+8. 
+
+
 
 
 
