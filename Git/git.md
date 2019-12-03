@@ -105,6 +105,20 @@ git push origin dev #将fenzhi合并到dev
 git config --global gui.encoding utf-8
 ```
 
+#### 删除远程分支
+
+```shell
+git push origin --delete ding
+```
+
+#### 删除本地分支
+
+```shell
+git branch -D ding
+```
+
+
+
 git branch -b test
 
 git branch -vv 
