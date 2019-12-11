@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>ZoomCharts配置</title>
+	<script src="https://cdn.zoomcharts-cloud.com/1/latest/zoomcharts.js"></script>
+</head>
+
+<body>
+	<div id="demo"></div>
+	<script>
+		let chart = new NetChart({
+			navigation: {
+				focusNodeExpansionRadius: 2,
+				initialNodes: [
+					"m-1"
+				],
+				mode: "focusnodes"
+			},
+			style: {
+				node: {
+					display: "image",
+					lineWidth: 3,
+					lineColor: "#2fc32f",
+					imageCropping: true
+				},
+				"nodeStyleFunction": function (node) {
+					node.image = "https://zoomcharts.com/dvsl/data/net-chart/friend-net/" + node.id + ".png";
+					node.label = node.data.name;
+				}
+			},
+			container: "demo",
+			data: [
+				{
+					url: "https:\/\/zoomcharts.com\/data\/friend-net.json"
+				}
+			],
+			toolbar: {
+				fullscreen: true,
+				enabled: true
+			},
+			interaction: {
+				resizing: {
+					enabled: false
+				}
+			}
+		})
+	</script>
+</body>
+
+</html>
