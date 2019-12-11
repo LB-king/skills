@@ -117,8 +117,27 @@ git push origin --delete ding
 git branch -D ding
 ```
 
+#### 创建&切换分支
 
-
+```shell
 git branch -b test
+```
 
+#### 本地远程分支
+
+```shell
 git branch -vv 
+```
+
+#### gitbash快捷键
+
+- `ctrl + L`  = 清屏
+- `ctrl + R` = 查找历史记录，输入keyword多次`ctrl + R`可返回下一匹配项
+- `ctrl + A` = 跳转至行首
+- `ctrl + E` = 跳转至行尾
+- `touch` = 新建文件
+- `mkdir` = 新建目录
+- `rm` = 删除文件
+- `rm -r` = 删除文件夹(recusive)
+- `mv` = 移动文件
+- `pwd` = 展示工作目录
