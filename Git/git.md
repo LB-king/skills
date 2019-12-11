@@ -127,6 +127,8 @@ git branch -b test
 
 ```shell
 git branch -vv 
+#本地分支追踪远程分支
+git branch -u origin/branch-name
 ```
 
 #### gitbash快捷键
