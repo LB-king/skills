@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>输入框限制</title>
+    <style>
+        section{
+            height: 42px;
+            line-height: 42px;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <span>只能输入2位小数</span><input type="text" id="input1" oninput="num(this)">
+</section>
+<section>
+    <span>只能输入数字</span><input type="text" oninput="num2(this)">
+</section>
+<section>
+    <span>自定义规则</span><input type="text" oninput="num3(this)" maxlength="6">
+</section>
+
+<nav>
+    <button id="btn">点击显示输入框详情</button>
+</nav>
+</body>
+<script>
+    //只能输入2位小数
+        function num(obj) {
+            var reg = /\d+\.?\d*/g;
+            var value = obj.value.match(reg);
+            if (value) {
+                obj.value = value.join('');
+            } else {
+                obj.value = '';
+            }
+            obj.value = obj.value.replace(/^(\-)*(\d+)\.(\d\d).*$/, '$1$2.$3'); //只能输入两个小数
+        }
+    //只能输入数字
+        function num2(obj) {
+            obj.value = obj.value.replace(/[^\d]/g,'')
+        }
+
+    function num3(obj) {
+        obj.value = obj.value.toUpperCase(); //小写转换成大写
+        var reg = /\d*[^IOQ]/g;
+        var value = obj.value.match(reg);
+        if (value) {
+            obj.value = value.join('')
+        } else {
+            obj.value = ''
+        }
+//        var temp = "";
+//        for (var i = 0; i < obj.value.length; i++) {
+//            if (obj.value.charCodeAt(i) > 0 && obj.value.charCodeAt(i) < 255) {
+//                temp += obj.value.charAt(i)
+//            }
+//        }
+//        obj.value = temp;
+        obj.value = obj.value.replace(/\s+/g, '');
+    }
+
+    var btn = document.getElementById("btn");
+    var ipt = document.getElementsByTagName('input');
+    btn.onclick=function () {
+        console.log(ipt[2].value);
+    };
+</script>
+</html>
