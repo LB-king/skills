@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script  src="./a.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <input type="file" id="upload" accept="image/jpg,image/jpeg,image/png" style="position: absolute;right:0;">
+  <img id="img" style="border: 1px solid red;" width="800">
+  <img id="img2" style="border: 1px solid blue;" width="800">
+  <ul>
+    <li><span>children</span></li>
+  </ul>
+</body>
+
+<script>
+  var oFile = document.getElementById('upload');
+  oFile.onchange = function(e) {
+    var files = e.target.files;
+    if (files.length == 0) return;
+    var reader = new FileReader();
+    reader.readAsDataURL(files[0]);
+    reader.onload = function() { 
+      document.getElementById('img2').src = reader.result;
+      compressImg(reader.result, function(res){
+        document.getElementById('img').src = res;
+      });
+    }
+  } 
+
+
+
+</script>
+</html>

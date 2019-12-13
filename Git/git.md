@@ -131,6 +131,18 @@ git branch -vv
 git branch -u origin/branch-name
 ```
 
+#### 查看remote分支
+
+```shell
+git remote show origin
+```
+
+#### 删除不存在的远程分支
+
+```shell
+git remote prune origin
+```
+
 #### gitbash快捷键
 
 - `ctrl + L`  = 清屏
