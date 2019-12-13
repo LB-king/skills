@@ -426,14 +426,3 @@ require(directory,useSubdirectory,regExp)
 cnpm install vue-chartjs chart.js --save
 ```
 
-
-
-#### background-management
-
-1. 配置pug-写出登录页面
-2. 直接上nodejs(直接放生产环境测试)
-3. 登录之后的路由跳转
-4. 拦截token登录问题
-5. mock出所有的交互数据
-6. 路由配置，localStorage存储登录信息，写出方法，存与取，
-

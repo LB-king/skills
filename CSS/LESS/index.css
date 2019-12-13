@@ -1,0 +1,6 @@
+div + p {
+  color: blue;
+}
+ul li + li {
+  color: brown;
+}
