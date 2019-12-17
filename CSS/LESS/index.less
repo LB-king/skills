@@ -14,3 +14,40 @@ ul{
     color: brown;
   }
 }
+
+.box{
+  &.inner{
+      color:'red'
+  }
+}
+.A_B{
+  &_C{
+    height: 4px;
+  }
+}
+.A_B{
+  & ._C{
+    height: 4px;
+  }
+}
+.A_B{
+  &._C{
+    height: 4px;
+  }
+}
+.A_B{
+  &&_C{
+    color: green;
+  }
+}
+.A{
+  &:after{
+    color:blue;
+  }
+}
+
+.A{
+  .B &{
+    height: 4px;
+  }
+}

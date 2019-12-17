@@ -4,3 +4,24 @@ div + p {
 ul li + li {
   color: brown;
 }
+.box.inner {
+  color: 'red';
+}
+.A_B_C {
+  height: 4px;
+}
+.A_B ._C {
+  height: 4px;
+}
+.A_B._C {
+  height: 4px;
+}
+.A_B.A_B_C {
+  color: green;
+}
+.A:after {
+  color: blue;
+}
+.B .A {
+  height: 4px;
+}
