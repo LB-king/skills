@@ -9,50 +9,51 @@
           .total_num.d2-text-center 500
       el-col(:span='12')
         div(v-html='msg1')
-  </div>
+    el-row
+     #main(style='height:400px;background:rgba(200,200,189,.6);')
 </template>
 
 <script>
 export default {
   computed: {
-    msg1 () {
-      return this.msg.replace(/↵/g, '</br>')
+    msg1() {
+      return this.msg.replace(/↵/g, "</br>");
     }
   },
-  data () {
+  data() {
     return {
-      msg: '第一点：1231313↵ 第二点：123131↵ 第三点、23131313↵',
+      msg: "第一点：1231313↵ 第二点：123131↵ 第三点、23131313↵",
       chartExtend: {
         legend: {
           show: true,
           bottom: true
         },
         series: {
-          center: ['50%', '50%']
+          center: ["50%", "50%"]
         }
       },
       chartData: {
-        columns: ['日期', '访问用户'],
-        rows: [{ 日期: '111', 访问用户: 1500 }, { 日期: '222', 访问用户: 2500 }]
+        columns: ["日期", "访问用户"],
+        rows: [{ 日期: "111", 访问用户: 1500 }, { 日期: "222", 访问用户: 2500 }]
       },
       chartSettings: {
-        radius: ['80px', '128px'],
+        radius: ["80px", "128px"],
         label: {
           // normal: {
           //   textStyle: {
           //     fontSize: 16
           //   }
           // },
-          color: '#fff',
-          fontSize: '12',
+          color: "#fff",
+          fontSize: "12",
           formatter: params => {
-            if (params.dataIndex === 0) {
-              return `${params.percent}%`
-            } else {
-              return `${params.percent}%`
-            }
+            // if (params.dataIndex === 0) {
+            //   return `${params.percent}%`
+            // } else {
+            return `${params.percent}%`;
+            // }
           },
-          position: 'inner'
+          position: "inner"
           // rich: {
           //   a: {
           //     color: '#fff'
@@ -66,7 +67,7 @@ export default {
           color: seriesIndex => {
             if (seriesIndex.dataIndex === 0) {
               return {
-                type: 'linear',
+                type: "linear",
                 x: 0,
                 y: 1,
                 x2: 0,
@@ -74,32 +75,32 @@ export default {
                 colorStops: [
                   {
                     offset: 0,
-                    color: '#40abfb' // 0% 处的颜色
+                    color: "#40abfb" // 0% 处的颜色
                   },
                   {
                     offset: 1,
-                    color: '#75b9f9' // 100% 处的颜色
+                    color: "#75b9f9" // 100% 处的颜色
                   },
                   {
                     offset: 1,
-                    color: '#77c5f7' // 100% 处的颜色
+                    color: "#77c5f7" // 100% 处的颜色
                   },
                   {
                     offset: 1,
-                    color: '#78d0f5' // 100% 处的颜色
+                    color: "#78d0f5" // 100% 处的颜色
                   }
                 ],
                 global: false // 缺省为 false
-              }
+              };
             } else {
-              return '#3b90d0'
+              return "#3b90d0";
             }
           }
         }
       }
-    }
+    };
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

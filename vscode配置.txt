@@ -11,3 +11,11 @@
 6.安装eslint
 7.生成块级注释的快捷键 alt+shift+a
 8.侧边栏字体大小调整(ctrl+shift+ +)  OR  (ctrl+shift+ - )
+
+在引入vetur插件后，需要这样配置，格式化才能生效
+"vetur.format.defaultFormatterOptions": {
+		"prettier": {
+            "singleQuote": true,
+            "semi": false
+		}
+	},

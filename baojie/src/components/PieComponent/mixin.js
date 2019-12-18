@@ -2,9 +2,14 @@ import echarts from 'echarts'
 import _ from 'lodash'
 export default {
   computed: {
-    // 图表容器
+    // 图表容器1
     chartMixin_Dom () {
       let dom = document.getElementById(this.domId)
+      return dom && echarts.init(dom)
+    },
+    // 图表容器2
+    chartMixin_Dom2 () {
+      let dom = document.getElementById(this.domId2)
       return dom && echarts.init(dom)
     },
     // 图表resize

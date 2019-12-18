@@ -155,3 +155,10 @@ git remote prune origin
 - `rm -r` = 删除文件夹(recusive)
 - `mv` = 移动文件
 - `pwd` = 展示工作目录
+
+#### origin/HEAD
+
+```shell
+git remote set-head origin my-test
+```
+
