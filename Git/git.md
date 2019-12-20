@@ -143,6 +143,19 @@ git remote show origin
 git remote prune origin
 ```
 
+#### 修改协议
+
+```shell
+#查看远程地址
+git remote -v
+#删除本地的origin
+git remote rm origin
+#重新设置新的origin
+git remote add origin git@xxx.com
+```
+
+
+
 #### gitbash快捷键
 
 - `ctrl + L`  = 清屏

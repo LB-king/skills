@@ -8,5 +8,24 @@
 
 ### 2、Less
 
-<img src="D:\skills\CSS\&amp;符号.png" style="zoom: 200%;" />
+![](D:\skills\CSS\&符号.png)
+
+### 3、滚动条抖动
+
+```css
+html {
+      overflow-y: scroll;
+    }
+:root {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+:root body {
+    position: absolute;
+}
+body {
+    width: 100vw;
+    overflow: hidden;
+}
+```
 
