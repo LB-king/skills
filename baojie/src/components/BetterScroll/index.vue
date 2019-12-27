@@ -1,5 +1,5 @@
 <template lang='pug'>
-  .better_scroll BetterScroll
+  .better_scroll.main1 BetterScroll
     .main(ref='main')
       .content(ref='content',:style='contentWidth')
         div(v-for='i in list',:key='i') {{i}}
@@ -74,6 +74,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+@import url('~@/assets/style/style.css');
 .main {
   height: 100px;
   width: 250px;

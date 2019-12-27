@@ -87,7 +87,18 @@ git config user.email #查看邮箱
   git checkout readme.txt
   ```
 
-  
+
+#### 修改已经push的commit信息
+
+```shell
+git log #查看需要修改的提交
+git rebase -i HEAD~1
+git commit --amend
+git rebase --continue
+git push -f origin dev
+```
+
+
 
 #### 合并分支
 
