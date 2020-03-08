@@ -104,7 +104,7 @@ git push -f origin dev
 
 ```shell
 git branch
-git branch -b fenzhi #创建一个分支
+git checkout -b fenzhi #创建一个分支
 git checkout dev
 git merge fenzhi
 git push origin dev #将fenzhi合并到dev
@@ -140,6 +140,8 @@ git branch -b test
 git branch -vv 
 #本地分支追踪远程分支
 git branch -u origin/branch-name
+#切换远程分支
+git branch --track remotes/origin/ding
 ```
 
 #### 查看remote分支

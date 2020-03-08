@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>节点关系</title>
+</head>
+
+<body>
+  <p>
+    A-》B-》C-》D
+  </p>
+  <p>
+    A《-B-》C
+  </p>
+  <p>
+    A-》B《-C《-D
+  </p>
+
+  <script>
+    let a = [
+      [{ from: 'A', to: 'B' }, { from: 'C', to: 'D' }, { from: 'B', to: 'C' }],
+      [{ from: 'B', to: 'A' }, { from: 'B', to: 'C' }],
+      [{ from: 'A', to: 'B' }, { from: 'C', to: 'B' }, { from: 'D', to: 'C' }]
+    ]
+
+    let b = [{ from: 'B', to: 'C' }, { from: 'A', to: 'B' }, { from: 'C', to: 'D' }]
+
+    let res = []
+    b.forEach(obj => {
+      res.push(...Object.values(obj))
+    })
+    console.log(res)
+  </script>
+</body>
+
+</html>
