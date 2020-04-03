@@ -209,3 +209,42 @@ str = true
 /编译报错
 ```
 
+#### 访问联合类型的属性或方法
+
+当ts不确定一个联合类型的变量到底是哪个类型的时候，我们只能访问此联合类型的所有类型里共有的属性或方法
+
+```typescript
+function getLength(sth: string|number):number{
+    return str.length
+}
+```
+
+#### 对象的类型--接口
+
+在ts中，我们使用接口(interfaces)来定义对象的类型
+
+```typescript
+interface Person {
+    name: string
+    age: number
+}
+let tom:Person = {
+    name:'tom',
+    age: 23
+}
+```
+
+多一些和少一些属性都是不允许的
+
+例如
+
+```typescript
+interface Person {
+    name: string
+    age: number
+}
+let tom:Person = {
+    name:'tom'
+}
+```
+
