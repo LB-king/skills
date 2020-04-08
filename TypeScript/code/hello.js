@@ -46,5 +46,48 @@ function getLength(sth) {
 }
 var tom = {
     name: 'tom',
-    age: 23
+    age: 23,
+    gender: 'male'
 };
+var pp = {
+    id: 123,
+    name: 'readonly'
+};
+pp.name = 'kobe';
+var mySum = function (x, y) {
+    return x + y;
+};
+//剩余参数
+function push(arr) {
+    var items = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        items[_i - 1] = arguments[_i];
+    }
+    items.forEach(function (item) {
+        arr.push(item);
+    });
+}
+var aa = [];
+console.log(aa, 1, 2, 3);
+function reverse(str) {
+    if (typeof str === 'string') {
+        return str.split('').reverse().join('');
+    }
+    else if (typeof str === 'number') {
+        return +(str.toString().split('').reverse().join(''));
+    }
+}
+console.log(reverse(1234));
+console.log(reverse('hello'));
+function getAnimalName(animal) {
+    return animal.name;
+}
+function isFish(animal) {
+    // if(typeof animal.swim === 'function') {
+    //     return true
+    // }
+    if (typeof animal.swim === 'function') {
+        return true;
+    }
+    return false;
+}
