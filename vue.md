@@ -130,6 +130,21 @@ this.router.push({path:`/user/${id}`}) -->user/123
 - beforeRouterEnter-->第一次进入或从其他组件对应路由进入时触发
 - beforeRouterUpdate-->在同一组件对应的多个路由间切换时触发
 
+#### vue-cli3
+
+Vue CLI是一个基于Vue.js进行快速开发的完整系统
+
+- 通过`@vue/cli`搭建交互式的项目脚手架
+- 通过`@vue/cli` + `@vue/cli-service-global`快速零配置原型开发
+- 一个运行时依赖(`@vue/cli-service`),该依赖：
+  - 可升级
+  - 基于webpack构建，并带有合理的默认配置
+  - 可以通过项目内的配置文件进行配置
+  - 可以通过插件进行扩展
+
+- 一个丰富的官方插件集合，集成了前端生态中最好的工具
+- 一套完全图形化的创建和管理vue.js项目的用户界面
+
 #### vuex
 
 #### 使用pug模板编写

@@ -719,3 +719,5 @@ toBoolean(1)
 - `export as namespace` UMD库声明全局变量
 - `declare global` 扩展全局变量
 - `declare module` 扩展模块
+
+声明文件必需以`.d.ts`为后缀
