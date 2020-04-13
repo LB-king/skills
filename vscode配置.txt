@@ -19,3 +19,28 @@
             "semi": false
 		}
 	},
+
+
+
+{
+  "window.zoomLevel": 1.2,
+  "editor.mouseWheelZoom": true,
+  "update.mode": "none",
+  "vetur.validation.template": false,
+  "vetur.format.defaultFormatterOptions": {
+    "prettier": {
+      "singleQuote": true,
+      "semi": false
+    }
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    {
+      "language": "vue",
+      "autoFix": true
+    },
+    "vue"
+  ],
+  "explorer.confirmDelete": false
+}

@@ -599,13 +599,14 @@ ES6中`=>`表示箭头函数
   
     ```typescript
     (window as any).foo = 1
+    ```
   ```
     
   此时我们可以使用`as any`临时将`window`断言为`any`类型
     
   它极有可能掩盖了真正的类型错误，所以如果不是非常确定，就不要使用`as any`。
     
-  ```typescript
+  ​```typescript
     interface Animal {
         name: string
     }
@@ -613,7 +614,7 @@ ES6中`=>`表示箭头函数
         run(): void
     }
   ```
-    
+  
     ```typescript
     interface Animal {
         name: string
@@ -721,3 +722,13 @@ toBoolean(1)
 - `declare module` 扩展模块
 
 声明文件必需以`.d.ts`为后缀
+
+```typescript
+declare var jQuery: (selector: string) => any
+jQuery('#foo')
+```
+
+并没有真的定义一个变量，只是定义了全局变量`jQuery`的类型，仅仅用于编译时的检查
+
+#### 第三方声明文件
+
