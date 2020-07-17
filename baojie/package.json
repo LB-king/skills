@@ -17,7 +17,7 @@
     "echarts": "^4.3.0",
     "element-ui": "^2.12.0",
     "font-awesome": "^4.7.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "lowdb": "^1.0.0",
     "ly-tab": "^2.1.2",
     "pug": "^2.0.4",
