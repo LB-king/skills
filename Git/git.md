@@ -7,6 +7,14 @@ git config user.name #查看用户
 git config user.email #查看邮箱
 ```
 
+#### 配置ssh
+
+```powershell
+git remote set-url origin git@xxx.git
+```
+
+
+
 #### 远程clone仓库
 
 - 生成SSH公钥

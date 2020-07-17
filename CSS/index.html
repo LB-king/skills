@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <div></div>
+</head>
+
+<body>
+  <style>
+    div {
+      position: relative;
+      height: 120px;
+      width: 50%;
+      margin: 0 auto;
+      overflow: hidden;
+      background: linear-gradient(to right, #e05454 8%, #e03b3e 50%);
+
+
+
+    }
+
+    div::before {
+      position: absolute;
+      content: "";
+      height: 120px;
+      width: 120px;
+      border-radius: 50%;
+      background: linear-gradient(to right, #e05454 8%, #e95e5e 50%);
+      top: -70px;
+      left: 50px;
+    }
+  </style>
+</body>
+
+</html>
