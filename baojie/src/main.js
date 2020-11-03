@@ -5,6 +5,7 @@ import store from './store'
 // 引入样式element-ui
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import '../theme/index.css'
 // 引入v-charts环形图和饼图
 import VeRing from 'v-charts/lib/ring.common'
 import VePie from 'v-charts/lib/pie.common'
